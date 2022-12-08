@@ -79,9 +79,9 @@ describe("Given I am connected as an employee", () => {
       userEvent.click(btnNewBill)
         // Vérifie que l'évènement est bien appelé
       expect(handleClickNewBill).toHaveBeenCalled()
-      await waitFor(() => screen.getByTestId("form-new-bill"))
-        // On vérifie que la page d'une nouvelle note de frais apparait avec l'apparition du nouvel ID donc a true
-      expect(screen.getByTestId("form-new-bill")).toBeTruthy()
+      // On vérifie que la page d'une nouvelle note de frais apparait avec l'apparition du nouvel ID donc a true
+      await waitFor(() => expect(screen.getByTestId("form-new-bill")).toBeTruthy()) 
+      
     })
   })
 
