@@ -41,7 +41,7 @@ describe("Given I am connected as an employee", () => {
       expect(windowIcon).toHaveClass("active-icon")
     })
 
-      // Vérifie si le trie des dates se fait de façon dévroissant
+      // Vérifie si le trie des dates se fait de façon dévroissante
     test("Then bills should be ordered from earliest to latest", () => {
       // Modification du test pour prendre en compte le rangement des "bills" comme dans la vue (container/bills.js : sort)
       document.body.innerHTML = BillsUI({ data: bills.sort((a, b) => (a.date < b.date) ? 1 : -1) })
@@ -100,13 +100,6 @@ describe("Given I am connected as an employee", () => {
       window.localStorage.setItem("user", JSON.stringify({
         type: "Employee"
       }))
-
-      window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          type: "Employee",
-        })
-      );
 
       const billInstance = new Bills({
         document, onNavigate, store: mockStore, localStorage: window.localStorage
